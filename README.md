@@ -6,7 +6,7 @@ TCP 스터디
   - Leader
        - Yoon
   - Solider
-       - Kim
+       - Kim : A beginner doing kinda crawling.
        - Kim
        - Lee
        - Kang
