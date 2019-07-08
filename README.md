@@ -9,7 +9,7 @@ TCP 스터디
        - Kim : A beginner doing kinda crawling.
        - Kim
        - Lee
-       - Kang
+       - Kang : Trash.
        - C
        - C
        - J
