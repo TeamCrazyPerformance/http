@@ -3,14 +3,23 @@ import numberInputBoxAdapter from './../components/adapterComponents/numberInput
 
 
 
+var sayHello = function(numberInputBox) {
+  console.dir(numberInputBox);
 
+  return numberInputBox;
+}
 
 
 var pickMeContainer = new Object();
 pickMeContainer.render = function() {
   var view = '';
 
-  view = view.concat(numberInputBoxAdapter.render(/*defaultValue*/3));
+  view = view.concat(numberInputBoxAdapter.render({
+    minValue: 0,
+    maxValue: 200,
+    placeholder: 'PTNum',
+    changeEventListener: sayHello
+  }));
 
   return view;
 }
