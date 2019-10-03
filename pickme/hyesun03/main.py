@@ -17,8 +17,8 @@ with open("study_member.json") as file:
     total = len(speak)
 
     # 1 - ((내가 걸린 횟수 - 내가 결석한 횟수) / 여태 진행했던 횟수) 로 가중치 적용
-    speak = [1 - (speak[i] - absent[i]) / total for i in range(8)]
-    wiki = [1 - (wiki[i] - absent[i]) / total for i in range(8)]
+    speak = [1 - (speak[i] - absent[i]) / total for i in range(len(study_member))]
+    wiki = [1 - (wiki[i] - absent[i]) / total for i in range(len(study_member))]
 
     # 오늘 결석한 사람
     today_absent = ["윤지수"]
