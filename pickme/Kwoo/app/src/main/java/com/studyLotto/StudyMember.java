@@ -15,7 +15,7 @@ public class StudyMember{
     public double getRecordWeight() { return recordWeight; }
     public void setRecordWeight(double recordWeight) { this.recordWeight = recordWeight; }
 
-    public StudyMember createNewStudyMemeber(String name){
+    public static StudyMember createNewStudyMemeber(String name){
         StudyMember newStudyMember = new StudyMember();
         newStudyMember.setName(name);
         newStudyMember.setRecordWeight(1);

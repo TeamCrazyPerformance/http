@@ -7,5 +7,5 @@ import java.util.List;
 public interface StudyDataAccessor {
     List<String> getStudyList();
     List<StudyMember> readStudyMembers(String studyName);
-    void storeStudyMembers(List<StudyMember> studyMembers, String studyName);
+    void storeStudyMembers(List<StudyMember> studyMemberList, String studyName);
 }
