@@ -3,3 +3,5 @@
 # Parcel
 .cache
 dist
+node_modules
+build
