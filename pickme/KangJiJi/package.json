@@ -12,6 +12,9 @@
   "devDependencies": {
     "@babel/core": "^7.6.2"
   },
+  "browserslist": [
+    "last 1 Chrome versions"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html"

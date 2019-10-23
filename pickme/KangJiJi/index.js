@@ -1,4 +1,3 @@
-import testComponent from "./components/testComponent.js";
+import app from "./src/app";
 
-console.log(testComponent.name);
-testComponent.sayHello()
+window.addEventListener('load', app.render);
