@@ -17,13 +17,6 @@ var pickMemberButton = function(eventListener, callback) {
     },
     getEventListener: function() {
       return function() { console.log('hihi'); };
-    },
-    setDom: function(dom) {
-      this.dom = dom;
-      return;
-    },
-    getDom: function() {
-      return this.dom;
     }
   };
 }

@@ -20,14 +20,17 @@ var domHelper = {
       
       // Array-like Object to Array
       let componentClassList = Array.from(document.getElementsByClassName(component.getClassName()));
-      component.setDom(componentClassList[componentClassList.length - 1]);
-
+      let dom = componentClassList[componentClassList.length - 1];
+      console.log(componentClassList);
+      dom.addEventListener("click", component.getEventListener());
       resolve(component);
     });
   },
-  eventListener: function(component) {
+  eventListener: function(dom) {
     return new Promise(function(resolve, reject) {
-      if(!component.getEventListener) { reject('This component does not have getEventListener method: ', component); }
+      if(!component.getEventListener) {
+        reject('This component does not have getEventListener method: ', component);
+      }
       
       console.log(component.getDom());
 
