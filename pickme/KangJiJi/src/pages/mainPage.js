@@ -1,12 +1,14 @@
-import pickMemberButton from './../components/pickMemberButton';
-import plusMinusButton from './../components/plusMinusButton';
+import setNumOfParticipantComponent from './../components/setNumOfParticipantComponent';
+import setInformationOfParticipantComponent from '../components/setInformationOfParticipantComponent.js';
+import pickPresenterComponent from './../components/pickPresenterComponent';
+import showPresenterComponent from './../components/showPresenterComponent';
 
 var mainPage = {
-  people: [],
   render: function() {
-    let pick = pickMemberButton();
-    
-    pick.render("append");
+    setNumOfParticipantComponent.render('append');
+    setInformationOfParticipantComponent.render('append');
+    pickPresenterComponent.render('append');
+    showPresenterComponent.render('append');
   }
 }
 
