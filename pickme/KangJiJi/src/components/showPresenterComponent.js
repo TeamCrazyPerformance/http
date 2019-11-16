@@ -12,9 +12,8 @@ var showPresenterComponent = {
   addEvent: function() {
     console.log('showPresenterComponent');
   },
-  render: function(renderingOption) {
-    domHelper.render(this, renderingOption);
-    this.addEvent();
+  render: function() {
+    domHelper.render(this);
   }
 }
 
