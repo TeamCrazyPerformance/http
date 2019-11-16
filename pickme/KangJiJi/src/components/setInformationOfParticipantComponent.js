@@ -5,7 +5,8 @@ var setInformationOfParticipantComponent = {
     <div class="set-information-of-participant-component__informaiton-form">
       <input type="text" class="set-information-of-participant-component__informaiton-form__participant-name">
       <input type="number" class="set-information-of-participant-component__informaiton-form__num-of-presentations">
-    </div>`,
+    </div>
+  `,
   componentClassName: `set-information-of-participant-component`,
   getComponentHtml: function() {
     return this.componentHtml;
@@ -13,12 +14,9 @@ var setInformationOfParticipantComponent = {
   getComponentClassName: function() {
     return this.componentClassName;
   },
-  addEvent: function() {
-    console.log('setInformationOfParticipantComponent');
-  },
-  render: function(renderingOption) {
-    domHelper.render(this, renderingOption);
-    this.addEvent();
+  addEvent: function() { },
+  render: function() {
+    domHelper.render(this);
   }
 }
 
