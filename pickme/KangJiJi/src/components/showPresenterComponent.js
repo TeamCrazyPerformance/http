@@ -9,9 +9,10 @@ var showPresenterComponent = {
   getComponentClassName: function() {
     return this.componentClassName;
   },
-  addEvent: function() {
-    console.log('showPresenterComponent');
+  setPresenter: function(presenter) {
+    document.getElementsByClassName("show-presenter-component__presenter-name")[0].innerHTML = presenter;
   },
+  addEvent: function() { },
   render: function() {
     domHelper.render(this);
   }

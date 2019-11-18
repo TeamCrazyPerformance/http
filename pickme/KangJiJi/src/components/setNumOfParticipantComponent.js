@@ -2,8 +2,7 @@ import domHelper from './../helper/domHelper';
 
 var setNumOfParticipantComponent = {
   componentHtml: `
-    <input type="number" class="set-num-of-participant-component__num-input-component" name="quantity" value="1" min="1" max="100">
-    <input type="button" class="set-num-of-participant-component__num-submit-button" value="Set Num">
+    <input type="button" class="set-num-of-participant-component__num-submit-button" value="+">
   `,
   componentClassName: `set-num-of-participant-component`,
   eventHandler: Function.prototype,
@@ -16,13 +15,12 @@ var setNumOfParticipantComponent = {
   setEventHandler: function(eventHandler) {
     this.eventHandler = eventHandler;
   },
-  getNumOfParticipant: function() {
-    let numInputBox = document.getElementsByClassName('set-num-of-participant-component__num-input-component')[0];
-    return this.eventHandler(Number(numInputBox.value));
+  increaseNumOfParticipant: function() {
+    return this.eventHandler();
   },
   addEvent: function() {
     let button = document.getElementsByClassName('set-num-of-participant-component__num-submit-button')[0];
-    button.addEventListener('click', this.getNumOfParticipant.bind(this));
+    button.addEventListener('click', this.increaseNumOfParticipant.bind(this));
   },
   render: function(eventHandler) {
     this.setEventHandler(eventHandler);
