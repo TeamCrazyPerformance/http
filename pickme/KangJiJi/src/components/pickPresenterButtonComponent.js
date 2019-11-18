@@ -1,6 +1,6 @@
-import domHelper from './../helper/domHelper';
+import domHelper from '../helper/domHelper';
 
-var pickPresenterComponent = {
+var pickPresenterButtonComponent = {
   componentHtml: `<input type="button" class="pick-presenter-component__pick-presenter-button" value="pick">`,
   componentClassName: `pick-presenter-component`,
   eventHandler: Function.prototype,
@@ -26,4 +26,4 @@ var pickPresenterComponent = {
   }
 }
 
-export default pickPresenterComponent;
+export default pickPresenterButtonComponent;
