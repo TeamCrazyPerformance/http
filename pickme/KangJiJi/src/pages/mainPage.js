@@ -1,31 +1,30 @@
-import setNumOfParticipantComponent from './../components/setNumOfParticipantComponent';
-import setInformationOfParticipantComponent from '../components/setInformationOfParticipantComponent.js';
+import increaseParticipantButtonComponent from '../components/increaseParticipantButtonComponent';
+import setInformationOfParticipantComponent from '../components/setInformationOfParticipantComponent';
 import pickPresenterButtonComponent from '../components/pickPresenterButtonComponent';
-import showPresenterComponent from './../components/showPresenterComponent';
+import showPresenterComponent from '../components/showPresenterComponent';
+import presenterPickHelper from '../helper/presenterPickHelper';
 
-import presenterPickHelper from './../helper/presenterPickHelper';
-
-var mainPage = {
-  appendSetInformationOfParticipantComponent: function() {
-    setInformationOfParticipantComponent.render();
+const mainPage = {
+  appendSetInformationOfParticipantComponent() {
+    setInformationOfParticipantComponent.appendComponent();
   },
-  increaseNumOfParticipant: function() {
+  increaseParticipant() {
     this.appendSetInformationOfParticipantComponent();
   },
-  showPresenter: function(presenter) {
-    showPresenterComponent.setPresenter(presenter);
+  showPresenter(presenterName) {
+    showPresenterComponent.setPresenter(presenterName);
   },
-  pickPresenter: function() {
-    let informationOfParticipantList = setInformationOfParticipantComponent.getInformationOfParticipantList();
-    let presenter = presenterPickHelper.pickPresenter(informationOfParticipantList);
-    this.showPresenter(presenter);
+  pickPresenter() {
+    const informationOfParticipants = setInformationOfParticipantComponent.getInformationOfParticipants();
+    const presenterName = presenterPickHelper.pickPresenter(informationOfParticipants);
+    this.showPresenter(presenterName);
   },
-  render: function() {
-    setNumOfParticipantComponent.render(this.increaseNumOfParticipant.bind(this));
+  render() {
+    increaseParticipantButtonComponent.render(this.increaseParticipant.bind(this));
     setInformationOfParticipantComponent.render();
     pickPresenterButtonComponent.render(this.pickPresenter.bind(this));
     showPresenterComponent.render();
-  }
-}
+  },
+};
 
 export default mainPage;

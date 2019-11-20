@@ -18,14 +18,17 @@ var setInformationOfParticipantComponent = {
   setEventHandler: function(eventHandler) {
     this.eventHandler = eventHandler;
   },
-  getInformationOfParticipantList: function() {
+  getInformationOfParticipants: function() {
     let informationOfParticipantWrapperDom = document.getElementsByClassName(this.getComponentClassName())[0];
     let informationOfParticipantDom = Array.from(informationOfParticipantWrapperDom.children);
-    let informationOfParticipantList = informationOfParticipantDom.map(function getInformationOfParticipantFromDom(dom) {
+    let informationOfParticipants = informationOfParticipantDom.map(function getInformationOfParticipantFromDom(dom) {
       let informationOfParticipant = [dom.children[0].value, Number(dom.children[1].value)];
       return informationOfParticipant;
     });
-    return informationOfParticipantList;
+    return informationOfParticipants;
+  },
+  appendComponent() {
+    domHelper.render(this, this.getComponentClassName());
   },
   addEvent: function() { },
   render: function(eventHandler) {

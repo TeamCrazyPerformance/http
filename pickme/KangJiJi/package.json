@@ -10,13 +10,17 @@
     "postcss-modules": "^1.4.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2"
+    "@babel/core": "^7.6.2",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
   },
   "browserslist": [
     "last 1 Chrome versions"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
     "start": "parcel index.html"
   },
   "author": "",

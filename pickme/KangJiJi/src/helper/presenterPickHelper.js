@@ -1,38 +1,52 @@
-var presenterPickHelper = {
-  pickPresenter: function(informationOfParticipantList) {
-    let informationOfParticipantListWithPercentage = this.equalityCalculatePercentage(informationOfParticipantList);
-    let presenter = this.randPickWithPercentage(informationOfParticipantListWithPercentage);
-    
+const presenterPickHelper = {
+  pickPresenter(informationOfParticipants) {
+    const informationOfParticipantsWithPercentage = this.anotherEqualityCalculatePercentage(informationOfParticipants);
+    const presenter = this.randPickWithPercentage(informationOfParticipantsWithPercentage);
     return presenter;
   },
-  equalityCalculatePercentage: function(informationOfParticipantList) {
+  equalityCalculatePercentage(informationOfParticipants) {
     let equalityPercent = 0;
-    let lengthOfInformationOfParticipantList = informationOfParticipantList.length;
-    let sortedInformationOfParticipantList = [...informationOfParticipantList].sort(function(a, b) {
+    const lengthOfInformationOfParticipants = informationOfParticipants.length;
+    const sortedInformationOfParticipants = [...informationOfParticipants].sort(function descSort(a, b) {
       return b[1] - a[1];
     });
 
-    equalityPercent = 100 / lengthOfInformationOfParticipantList;
+    equalityPercent = 100 / lengthOfInformationOfParticipants;
 
-    sortedInformationOfParticipantList.forEach(function changePresentationTimesToPercentage(informationOfParticipant, index) {
-      // equality
+    sortedInformationOfParticipants.forEach(function changePresentationTimesToPercentage(informationOfParticipant) {
       informationOfParticipant[1] = equalityPercent;
     });
-    console.log(sortedInformationOfParticipantList);
-    return sortedInformationOfParticipantList;
+    return sortedInformationOfParticipants;
   },
-  randPickWithPercentage: function(informationOfParticipantList) {
-    let rand  = Math.floor(Math.random() * 100) + 1;
-    let sumOfPercentage = 0;
-    let listLength = informationOfParticipantList.length;
+  anotherEqualityCalculatePercentage(informationOfParticipants) {
+    const sortedInformationOfParticipants = [...informationOfParticipants].sort(function ascSort(a, b) {
+      return a[1] - b[1];
+    });
 
-    for(let i = 0; i < listLength; i++) {
-      sumOfPercentage += informationOfParticipantList[i][1];
-      if(rand <= sumOfPercentage) {
-        return informationOfParticipantList[i][0];
+    sortedInformationOfParticipants.forEach(function changePresentationTimesToPercentage(informationOfParticipant, index) {
+      if (index === 0) {
+        informationOfParticipant[1] = 100;
+      } else {
+        informationOfParticipant[1] = 0;
+      }
+    });
+
+    return sortedInformationOfParticipants;
+  },
+  randPickWithPercentage(informationOfParticipants) {
+    const listLength = informationOfParticipants.length;
+    const rand = Math.floor(Math.random() * 100) + 1;
+    let sumOfPercentage = 0;
+
+    for (let i = 0; i < listLength; i += 1) {
+      sumOfPercentage += informationOfParticipants[i][1];
+      if (rand <= sumOfPercentage) {
+        return informationOfParticipants[i][0];
       }
     }
-  }
-}
+
+    return false;
+  },
+};
 
 export default presenterPickHelper;

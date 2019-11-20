@@ -1,6 +1,6 @@
-import domHelper from './../helper/domHelper';
+import domHelper from '../helper/domHelper';
 
-var setNumOfParticipantComponent = {
+var increaseParticipantButtonComponent = {
   componentHtml: `
     <input type="button" class="set-num-of-participant-component__num-submit-button" value="+">
   `,
@@ -28,4 +28,4 @@ var setNumOfParticipantComponent = {
   }
 }
 
-export default setNumOfParticipantComponent;
+export default increaseParticipantButtonComponent;
