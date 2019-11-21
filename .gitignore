@@ -1,7 +1,0 @@
-## HTTP Ignore file ##
-
-# Parcel
-.cache
-dist
-node_modules
-build
