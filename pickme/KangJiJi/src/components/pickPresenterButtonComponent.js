@@ -1,29 +1,29 @@
 import domHelper from '../helper/domHelper';
 
-var pickPresenterButtonComponent = {
-  componentHtml: `<input type="button" class="pick-presenter-component__pick-presenter-button" value="pick">`,
-  componentClassName: `pick-presenter-component`,
+const pickPresenterButtonComponent = {
+  componentHtml: '<input type="button" class="pick-presenter-component__pick-presenter-button" value="pick">',
+  componentClassName: 'pick-presenter-component',
   eventHandler: Function.prototype,
-  getComponentHtml: function() {
+  getComponentHtml() {
     return this.componentHtml;
   },
-  getComponentClassName: function() {
+  getComponentClassName() {
     return this.componentClassName;
   },
-  setEventHandler: function(eventHandler) {
+  setEventHandler(eventHandler) {
     this.eventHandler = eventHandler;
   },
-  pickPresenter: function() {
+  pickPresenter() {
     return this.eventHandler();
   },
-  addEvent: function() {
-    let button = document.getElementsByClassName('pick-presenter-component__pick-presenter-button')[0];
+  addEvent() {
+    const button = document.getElementsByClassName('pick-presenter-component__pick-presenter-button')[0];
     button.addEventListener('click', this.pickPresenter.bind(this));
   },
-  render: function(eventHandler) {
+  render(eventHandler) {
     this.setEventHandler(eventHandler);
     domHelper.render(this);
-  }
-}
+  },
+};
 
 export default pickPresenterButtonComponent;

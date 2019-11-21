@@ -1,28 +1,26 @@
-import domHelper from './../helper/domHelper';
+import domHelper from '../helper/domHelper';
 
-var setInformationOfParticipantComponent = {
-  componentHtml: `
-    <div class="set-information-of-participant-component__informaiton-form">
+const setInformationOfParticipantComponent = {
+  componentHtml: `<div class="set-information-of-participant-component__informaiton-form">
       <input type="text" class="set-information-of-participant-component__informaiton-form__participant-name">
       <input type="number" class="set-information-of-participant-component__informaiton-form__num-of-presentations">
-    </div>
-  `,
-  componentClassName: `set-information-of-participant-component`,
+    </div>`,
+  componentClassName: 'set-information-of-participant-component',
   eventHandler: Function.prototype,
-  getComponentHtml: function() {
+  getComponentHtml() {
     return this.componentHtml;
   },
-  getComponentClassName: function() {
+  getComponentClassName() {
     return this.componentClassName;
   },
-  setEventHandler: function(eventHandler) {
+  setEventHandler(eventHandler) {
     this.eventHandler = eventHandler;
   },
-  getInformationOfParticipants: function() {
-    let informationOfParticipantWrapperDom = document.getElementsByClassName(this.getComponentClassName())[0];
-    let informationOfParticipantDom = Array.from(informationOfParticipantWrapperDom.children);
-    let informationOfParticipants = informationOfParticipantDom.map(function getInformationOfParticipantFromDom(dom) {
-      let informationOfParticipant = [dom.children[0].value, Number(dom.children[1].value)];
+  getInformationOfParticipants() {
+    const informationOfParticipantWrapperDom = document.getElementsByClassName(this.getComponentClassName())[0];
+    const informationOfParticipantDom = Array.from(informationOfParticipantWrapperDom.children);
+    const informationOfParticipants = informationOfParticipantDom.map(function getInformationOfParticipantFromDom(dom) {
+      const informationOfParticipant = [dom.children[0].value, Number(dom.children[1].value)];
       return informationOfParticipant;
     });
     return informationOfParticipants;
@@ -30,11 +28,11 @@ var setInformationOfParticipantComponent = {
   appendComponent() {
     domHelper.render(this, this.getComponentClassName());
   },
-  addEvent: function() { },
-  render: function(eventHandler) {
+  addEvent() { },
+  render(eventHandler) {
     this.setEventHandler(eventHandler);
     domHelper.render(this);
-  }
-}
+  },
+};
 
 export default setInformationOfParticipantComponent;

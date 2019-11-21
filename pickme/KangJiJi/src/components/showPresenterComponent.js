@@ -1,26 +1,26 @@
-import domHelper from './../helper/domHelper';
+import domHelper from '../helper/domHelper';
 
-var showPresenterComponent = {
-  componentHtml: `<div class="show-presenter-component__presenter-name"></div>`,
-  componentClassName: `show-presenter-component`,
+const showPresenterComponent = {
+  componentHtml: '<div class="show-presenter-component__presenter-name"></div>',
+  componentClassName: 'show-presenter-component',
   eventHandler: Function.prototype,
-  getComponentHtml: function() {
+  getComponentHtml() {
     return this.componentHtml;
   },
-  getComponentClassName: function() {
+  getComponentClassName() {
     return this.componentClassName;
   },
-  setEventHandler: function(eventHandler) {
+  setEventHandler(eventHandler) {
     this.eventHandler = eventHandler;
   },
-  setPresenter: function(presenter) {
-    document.getElementsByClassName("show-presenter-component__presenter-name")[0].innerHTML = presenter;
+  setPresenter(presenter) {
+    document.getElementsByClassName('show-presenter-component__presenter-name')[0].innerHTML = presenter;
   },
-  addEvent: function() { },
-  render: function(eventHandler) {
+  addEvent() { },
+  render(eventHandler) {
     this.setEventHandler(eventHandler);
     domHelper.render(this);
-  }
-}
+  },
+};
 
 export default showPresenterComponent;
