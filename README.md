@@ -14,6 +14,7 @@ TCP 북 스터디
 - GoF의 디자인 패턴
 - DDD
 - 클린아키텍처
+- Working Effectively With Legacy Code
 
 ##### 개인적으로 곁들여 읽으면 좋은 책.
  필독! 개발자 온보딩 가이드
